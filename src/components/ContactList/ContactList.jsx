@@ -6,9 +6,8 @@ import { contactsSelector, filterSelector } from 'store/selectors';
 
 export const ContactList = () => {
   const contacts = useSelector(contactsSelector);
-  console.log(contacts);
+
   const filter = useSelector(filterSelector);
-  console.log(filter);
 
   const totalNumberOfContacts = contacts.contacts.length;
 
