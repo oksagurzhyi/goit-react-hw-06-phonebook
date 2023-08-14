@@ -9,11 +9,11 @@ export const ContactList = () => {
 
   const filter = useSelector(filterSelector);
 
-  const totalNumberOfContacts = contacts.contacts.length;
+  const totalNumberOfContacts = contacts.length;
 
   const normalizeName = filter.toLowerCase();
 
-  const visibleContacts = contacts.contacts.filter(contact =>
+  const visibleContacts = contacts.filter(contact =>
     contact.name.toLowerCase().includes(normalizeName)
   );
 

@@ -15,7 +15,6 @@ export const Filter = () => {
         className={css.inputFilter}
         type="text"
         onChange={e => {
-          console.log(e.currentTarget.value);
           dispatch(filterChange(e.currentTarget.value));
         }}
       />
