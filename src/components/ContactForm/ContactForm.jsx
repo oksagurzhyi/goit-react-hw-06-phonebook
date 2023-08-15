@@ -30,14 +30,14 @@ export default function ContactForm() {
   };
   const onSubmit = e => {
     e.preventDefault();
-    const isContactInPhonebook = contacts.some(
+    const isContactInPhonebook = contacts.contacts.some(
       contact => contact.name.toLowerCase() === name.toLowerCase()
     );
     if (isContactInPhonebook) {
       return alert('This contact is already exist in your phonebook');
     }
 
-    dispatch(addContact({ name, number }));
+    dispatch(addContact(name, number));
     setName('');
     setNumber('');
   };

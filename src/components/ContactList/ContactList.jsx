@@ -9,14 +9,13 @@ export const ContactList = () => {
 
   const filter = useSelector(filterSelector);
 
-  const totalNumberOfContacts = contacts.length;
+  const totalNumberOfContacts = contacts.contacts.length;
 
   const normalizeName = filter.toLowerCase();
 
-  const visibleContacts = contacts.filter(contact =>
-    contact.name.toLowerCase().includes(normalizeName)
-  );
-  console.log(visibleContacts);
+  const visibleContacts = contacts.contacts.filter(contact => {
+    return contact.name.toLowerCase().includes(normalizeName);
+  });
 
   return totalNumberOfContacts > 0 ? (
     <ul className={css.contactItems}>
