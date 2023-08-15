@@ -16,21 +16,22 @@ export const contactsSlice = createSlice({
       reducer(state, action) {
         state.contacts.push(action.payload);
       },
+      prepare(name, number) {
+        return {
+          payload: {
+            id: nanoid(),
+            name,
+            number,
+          },
+        };
+      },
     },
-    prepare(name, number) {
-      return {
-        payload: {
-          id: nanoid(),
-          name,
-          number,
-        },
-      };
+
+    removeContact(state, action) {
+      state.contacts = state.contacts.filter(
+        contact => contact.id !== action.payload
+      );
     },
-  },
-  removeContact(state, action) {
-    state.contacts = state.contacts.filter(
-      contact => contact.id !== action.payload
-    );
   },
 });
 

@@ -16,6 +16,7 @@ export const ContactList = () => {
   const visibleContacts = contacts.filter(contact =>
     contact.name.toLowerCase().includes(normalizeName)
   );
+  console.log(visibleContacts);
 
   return totalNumberOfContacts > 0 ? (
     <ul className={css.contactItems}>

@@ -30,7 +30,7 @@ export default function ContactForm() {
   };
   const onSubmit = e => {
     e.preventDefault();
-    const isContactInPhonebook = contacts.contacts.some(
+    const isContactInPhonebook = contacts.some(
       contact => contact.name.toLowerCase() === name.toLowerCase()
     );
     if (isContactInPhonebook) {
